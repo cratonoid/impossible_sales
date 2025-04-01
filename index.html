@@ -217,7 +217,6 @@
     font-size: 1rem;
     box-sizing: border-box;
     padding: 3rem 0;
-    background-color: rgb(235, 235, 235);
 }
 
 .challenge-box, .solution-box {
@@ -246,6 +245,10 @@ h2.d-flex.align-items-center span {
 
 /* Media Query for Mobile View */
 @media (max-width: 768px) {
+      .row {
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+    }
     /* Stack columns vertically on mobile */
     .row.mb-5.d-flex.align-items-stretch {
         flex-direction: column;
@@ -327,7 +330,7 @@ h2.d-flex.align-items-center span {
            style="width: 100vw; height: 400px; object-fit: cover;">
       <div class="overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;
                                   background: rgba(0, 0, 0, 0.3); display: flex; align-items: center; justify-content: flex-end;">
-        <div style="max-width: 50%; padding: 40px; color: white; text-align: right;">
+        <div class="overlayy" class="overlayy"style=" padding: 40px; color: white; text-align: right;">
           <h2 style="font-weight: 900;">Representation across High Impact Events in Middle East and North Africa Region</h2>
           <p style="font-weight: 500;">Impossible Sales eliminates barriers to entry in the Middle East by offering expert representation at major events. Our expert sales reps manage your booth, pitch your product or service, and engage attendees at events.</p>
         </div>
@@ -341,7 +344,7 @@ h2.d-flex.align-items-center span {
            style="width: 100vw; height: 400px; object-fit: cover;">
       <div class="overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;
                                   background: rgba(0, 0, 0, 0.3); display: flex; align-items: center; justify-content: flex-end;">
-        <div style="max-width: 50%; padding: 40px; color: white; text-align: right;">
+        <div class="overlayy" style="padding: 40px; color: white; text-align: right;">
           <h2 style="font-weight: 900;">Real-Time Lead Generation Intelligent and Efficient Sales Processes</h2>
           <p style="font-weight: 500;">Our AI sales agent tracks, transcribes and summarizes booth conversations, prioritizes qualified leads, and sends personalized emails to trigger communication instantly.</p>
         </div>
@@ -355,7 +358,7 @@ h2.d-flex.align-items-center span {
            style="width: 100vw; height: 400px; object-fit: cover;">
       <div class="overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;
                                   background: rgba(0, 0, 0, 0.3); display: flex; align-items: center; justify-content: flex-end;">
-        <div style="max-width: 50%; padding: 40px; color: white; text-align: right;">
+        <div class="overlayy" style=" padding: 40px; color: white; text-align: right;">
           <h2 style="font-weight: 900;">Follow up, Lead Engagement and Deal Closing Post Event</h2>
           <p style="font-weight: 500;">Our experts follow up with leads via automated email sequences, sales calls, and in-person meetings to keep them engaged. We conduct meetings, showcase demos, and help close deals on your behalf, ensuring every opportunity is maximized.</p>
         </div>
@@ -364,7 +367,47 @@ h2.d-flex.align-items-center span {
   </div>
 </div>
 
+<style>
+  /* Desktop View */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center; /* This will center the content */
+}
+.overlayy {
+  max-width: 50%;
 
+}
+
+/* Media Query for Mobile View */
+@media (max-width: 768px) {
+    .overlayy {
+        justify-content: center;
+        padding: 15px; /* Padding to make sure content does not touch the edges */
+    }
+
+    .overlay > div {
+        max-width: 90%; /* Allow more room on smaller screens */
+        padding: 15px;
+        text-align: center;
+    }
+
+    .overlay h2 {
+        font-size: 1.5rem; /* Reduce font size for better visibility */
+    }
+
+    .overlay p {
+        font-size: 1rem; /* Reduce font size for mobile */
+    }
+}
+
+</style>
 
 
 <!--  -->
