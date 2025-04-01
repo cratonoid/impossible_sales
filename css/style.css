@@ -81,7 +81,7 @@
   color: #a8a8a8; }
 
 .font-gray-7, body {
-  color: #939393; }
+  color: #000000; }
 
 .font-gray-8 {
   color: #7b7b7b; }
@@ -111,7 +111,7 @@
   border-color: #a8a8a8; }
 
 .border-gray-7 {
-  border-color: #939393; }
+  border-color: #000000; }
 
 .border-gray-8 {
   border-color: #7b7b7b; }
@@ -141,7 +141,7 @@
   border-color: #a8a8a8; }
 
 .bg-gray-7 {
-  border-color: #939393; }
+  border-color: #000000; }
 
 .bg-gray-8 {
   border-color: #7b7b7b; }
@@ -803,7 +803,7 @@ h1, h2, h3, h4, h5,
     color: rgba(255, 255, 255, 0.8); }
 
 .site-section {
-  padding: 7rem 0; }
+  padding: 2rem 0; }
   @media (max-width: 991.98px) {
     .site-section {
       padding: 3rem 0; } }
