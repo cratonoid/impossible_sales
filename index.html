@@ -35,7 +35,7 @@
       <div class="site-section-cover img-bg-section" style="background-image: url('images/hero_1.jpg'); position: relative;">
         
         <div class="container">
-          <div class="row align-items-start justify-content-start" style="padding-top: 100px;">
+          <div class="row roww align-items-start justify-content-start" style="padding-top: 100px;">
             
             <!-- Logo at the top left -->
             <div style="position: absolute; top: 20px; left: 20px;">
@@ -83,40 +83,128 @@
     <!-- CARDS -->
     
     <div class="pb-5" style="position: relative; z-index: 8;">
-      <div class="container">
-        <div class="row justify-content-center row-custom-spacing px-3" style="margin-top: -100px;">
-          <div class="col-md-6 col-lg-3 d-flex ">
-            <div class="gradient-box box-1 d-flex flex-column h-100" 
-                 style="background-image: url('images/Frame2.png'); background-size: cover; background-position: center; padding: 30px; border-radius: 10px; color: white; text-align: center; min-height: 260px; flex-grow: 1;">
-              <h3 class="h3 mb-2" style="font-weight: bolder; font-size: 40px;">250+<br>Leads</h3>
-              <hr style="border-top: 2px solid white; width: 80%; margin: 10px auto;">
-              <p style="font-size: 18px;">Converted by Our Experienced Sales Professionals</p>
-            </div>
-          </div>
+      <div class="cardss container">
+        <div class="cards row justify-content-center row-custom-spacing" style="margin-top: -100px;">
           
           <div class="col-md-6 col-lg-3 d-flex">
-            <div class="gradient-box box-2 d-flex flex-column h-100" 
-                 style="background-image: url('images/Frame2.png'); background-size: cover; background-position: center; padding: 30px; border-radius: 10px; color: white; text-align: center; min-height: 260px; flex-grow: 1;">
-              <h3 class="h3 mb-2" style="font-weight: bolder; font-size: 40px;">50+<br>Clients</h3>
-              <hr style="border-top: 2px solid white; width: 80%; margin: 10px auto;">
-              <p style="font-size: 18px;">Expanded their business to Middle East</p>
+            <div class="gradient-box box-1">
+              <div class="card-content">
+                <div class="left-text">250+<br>Leads</div>
+                <div class="separator mobile-separator"></div> <!-- Vertical separator for mobile -->              
+              <hr class="desktop-separator"> <!-- Horizontal separator for desktop -->
+              <p class="right-text">Converted by Our Experienced Sales Professionals</p>
+            </div>
             </div>
           </div>
-          
+    
           <div class="col-md-6 col-lg-3 d-flex">
-            <div class="gradient-box box-3 d-flex flex-column h-100" 
-                 style="background-image: url('images/Frame2.png'); background-size: cover; background-position: center; padding: 30px; border-radius: 10px; color: white; text-align: center; min-height: 260px; flex-grow: 1;">
-              <h3 class="h3 mb-2" style="font-weight: bolder; font-size: 40px;">10+ Countries</h3>
-              <hr style="border-top: 2px solid white; width: 80%; margin: 10px auto;">
-              <p style="font-size: 18px;">Countries Served Worldwide</p>
+            <div class="gradient-box box-2">
+              <div class="card-content">
+                <div class="left-text">50+<br>Clients</div>
+                <div class="separator mobile-separator"></div>              
+              <hr class="desktop-separator">
+              <p class="right-text">Expanded their business to Middle East</p>
+            </div>
             </div>
           </div>
+    
+          <div class="col-md-6 col-lg-3 d-flex">
+            <div class="gradient-box box-3">
+              <div class="card-content">
+                <div class="left-text">10+<br>Countries</div>
+                <div class="separator mobile-separator"></div>              
+              <hr class="desktop-separator">
+              <p class="right-text">Countries Served Worldwide</p>
+            </div>
+            </div>
+          </div>
+    
         </div>
       </div>
     </div>
     
+    <style>
+      /* Default desktop styling (keeps original layout) */
+      .gradient-box {
+        background-image: url('images/Frame2.png'); 
+        background-size: cover; 
+        background-position: center; 
+        padding: 30px; 
+        border-radius: 10px; 
+        color: white; 
+        text-align: center; 
+        min-height: 260px; 
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+         /* Ensures content is vertically centered */
+      }
     
-
+      .left-text {
+        font-weight: bolder;
+        font-size: 40px;
+        line-height: 1.25 !important;
+      }
+    
+      /* Horizontal separator for desktop */
+      .desktop-separator {
+        border-top: 2px solid white;
+        width: 80%;
+        margin: 10px auto;
+      }
+    
+      /* Mobile view adjustments */
+      @media (max-width: 768px) {
+        .cards{
+          margin-top: 0 !important;
+        }
+        .card-content {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          text-align: center;
+          width: 100%;
+          height: 100%;
+        }
+    
+        .left-text {
+          font-size: 24px;
+          font-weight: bold;
+          flex: 1;
+          padding-right: 10px;
+        }
+    
+        .separator {
+          width: 2px;
+          height: 60%;
+          background-color: white;
+        }
+    
+        .right-text {
+          font-size: 14px;
+          flex: 1;
+          padding-left: 10px;
+        }
+    
+        /* Hide desktop separator in mobile */
+        .desktop-separator {
+          display: none;
+        }
+        .gradient-box{
+          justify-content: center;
+          min-height: 180px;
+        }
+      }
+    
+      /* Hide vertical separator in desktop */
+      @media (min-width: 769px) {
+        .mobile-separator {
+          display: none;
+        }
+      }
+    </style>
+    
+    
 
 
 
@@ -132,7 +220,7 @@
               <h2 style="color: black; font-weight: 900;">What Business Challenges We Solve?</h2><br>
           </div>
       </div>
-      <div class="row mb-5 d-flex align-items-stretch">
+      <div class="row roww mb-5 d-flex align-items-stretch">
           <div class="col-lg-5 ml-auto d-flex flex-column">
               <div class="challenge-box p-4 flex-grow-1">
                   <h2 class="d-flex align-items-center mb-4" style="font-weight: 900;">
@@ -261,10 +349,12 @@ h2.d-flex.align-items-center span {
 
 
   }
-      .row {
-      margin-left: 0 !important;
+    .roww{
+      margin-left: 0 !important ;
       margin-right: 0 !important;
+
     }
+     
     /* Stack columns vertically on mobile */
     .row.mb-5.d-flex.align-items-stretch {
         flex-direction: column;
@@ -330,7 +420,7 @@ h2.d-flex.align-items-center span {
 <!-- HOW WE DO IT -->
 <div class="site-section" style="background-color: rgb(235, 235, 235);" id="services-section">
   <div class="container text-center">
-    <div class="row mb-5">
+    <div class="row roww mb-5">
       <div class="col-12">
         <div class="block-heading-1">
           <h2 style="color:  #1c81c5; font-weight: 900">How We Do It?</h2>
@@ -340,7 +430,7 @@ h2.d-flex.align-items-center span {
   </div>
 
   <!-- Full-width Images with Overlays & Text -->
-  <div class="row">
+  <div class="row roww">
     <div class="col-12 position-relative" style="margin-bottom: 20px;">
       <img src="images/woman.jpg" alt="Process Step 1" 
            style="width: 100vw; height: 400px; object-fit: cover;">
@@ -354,7 +444,7 @@ h2.d-flex.align-items-center span {
     </div>
   </div>
 
-  <div class="row">
+  <div class="row roww">
     <div class="col-12 position-relative" style="margin-bottom: 20px;">
       <img src="images/suitman.png" alt="Process Step 2" 
            style="width: 100vw; height: 400px; object-fit: cover;">
@@ -368,7 +458,7 @@ h2.d-flex.align-items-center span {
     </div>
   </div>
 
-  <div class="row">
+  <div class="row roww">
     <div class="col-12 position-relative">
       <img src="images/hands.jpg" alt="Process Step 3" 
            style="width: 100vw; height: 400px; object-fit: cover;">
@@ -441,7 +531,7 @@ h2.d-flex.align-items-center span {
 <!-- WHY CHOOSE US -->
 <div class="site-section" id="team-section">
   <div class="container">
-    <div class="row mb-5">
+    <div class="row roww mb-5">
       <div class="col-12 text-center">
         <div class="block-heading-1">
           <h2 style="color: #1c81c5; font-weight: 800;">Why Choose Us?</h2>
@@ -449,7 +539,7 @@ h2.d-flex.align-items-center span {
       </div>
     </div>
     
-    <div class="row">
+    <div class="row roww">
       <div class="col-12">
         <!-- Text before lines -->
         <p style="font-size: 16px; color: #333; font-weight: 600;">At Impossible Sales, we go beyond traditional lead generation; we create real business opportunities. Our expertise in 
@@ -524,8 +614,8 @@ h2.d-flex.align-items-center span {
           </div>
         </div>
     
-        <!-- Benefits Section (2 per row, Centered Text) -->
-        <div class="row text-white text-center">
+        <!-- Benefits Section (2 per row roww, Centered Text) -->
+        <div class="row roww text-white text-center">
           <!-- Row 1 -->
           <div class="col-md-6 mb-4">
             <h4 style="font-weight: 600;">Smart Lead Targeting</h4>
@@ -573,7 +663,7 @@ h2.d-flex.align-items-center span {
     <!--  -->
     <div class="site-section" id="blog-section">
       <div class="container">        
-        <div class="row">
+        <div class="row roww">
           <div class="col-md-4">
             <div style="position: relative; background-color: #f9f9f9; padding: 20px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); margin-bottom: 20px;">
               <img src="images/star.png" alt="Star" style="position: absolute; top: 10px; right: 10px; width: 30px;" />
