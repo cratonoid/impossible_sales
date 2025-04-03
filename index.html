@@ -50,7 +50,7 @@
                 including GITEX, LEAP, AI Everything, and more.
               </p> 
               <p>
-                <a href="#" class="btn btn-gradient">
+                <a href="#" class="connect-button" data-bs-toggle="modal" data-bs-target="#detailsModal" class="btn btn-gradient">
                   Let’s Connect
                 </a>
               </p>            
@@ -301,14 +301,7 @@
       </div>
 
       <div class="text-center mt-4">
-          <button style="background: linear-gradient(90deg, #2280cb, #1a508b); 
-                          color: white; 
-                          border: none; 
-                          padding: 12px 24px; 
-                          font-size: 16px; 
-                          border-radius: 5px; 
-                          cursor: pointer;
-                          transition: 0.3s;">
+          <button class="connect-button" data-bs-toggle="modal" data-bs-target="#detailsModal">
               Let's Connect
           </button>
       </div>
@@ -425,7 +418,7 @@ h2.d-flex.align-items-center span {
     /* Button size and styling for mobile */
     .text-center button {
         font-size: 16px;  /* Ensured button is large enough for mobile */
-        border-radius: 5px;
+        border-radius: 35px;
     }
     button {
       font-size: 25px !important;
@@ -514,14 +507,7 @@ h2.d-flex.align-items-center span {
   </div>
 </div>
 <div class="text-center mt-4">
-  <button style="background: linear-gradient(90deg, #2280cb, #1a508b); 
-                  color: white; 
-                  border: none; 
-                  padding: 12px 24px; 
-                  font-size: 16px; 
-                  border-radius: 5px; 
-                  cursor: pointer;
-                  transition: 0.3s;">
+  <button class="connect-button" data-bs-toggle="modal" data-bs-target="#detailsModal" >
       Let's Connect
   </button>
 </div>
@@ -624,14 +610,7 @@ h2.d-flex.align-items-center span {
     </div>
     <!-- Centered "Let's Connect" Button at the Bottom -->
     <div class="text-center mt-4">
-      <button style="background: linear-gradient(90deg, #2280cb, #1a508b); 
-                     color: white; 
-                     border: none; 
-                     padding: 12px 24px; 
-                     font-size: 16px; 
-                     border-radius: 5px; 
-                     cursor: pointer;
-                     transition: 0.3s;">
+      <button class="connect-button" data-bs-toggle="modal" data-bs-target="#detailsModal">
         Let's Connect
       </button>
     </div>
@@ -800,16 +779,28 @@ h2.d-flex.align-items-center span {
       }
     
       /* Connect Button */
-      .connect-button {
+      
+      
+    .connect-button {
+    
+
         background: linear-gradient(90deg, #2280cb, #1a508b);
         color: white;
-        border: none;
-        padding: 12px 24px;
-        font-size: 16px;
-        border-radius: 5px;
+        padding: 14px 28px;
+        border-radius: 30px;
+        font-size: 18px;
+        font-weight: 900;
+        text-decoration: none;
+        display: inline-block;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border-color: #27cee400;
         cursor: pointer;
-        transition: 0.3s;
-      }
+}
+
+.connect-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 5px 15px rgb(14, 143, 249);
+}
     
       /* Mobile Responsiveness */
       @media (max-width: 768px) {
@@ -834,6 +825,7 @@ h2.d-flex.align-items-center span {
         .connect-button {
           padding: 10px 20px;
           font-size: 14px;
+          border-radius: 30px;
         }
       }
     </style>
@@ -959,52 +951,50 @@ h2.d-flex.align-items-center span {
 
 
 <!-- popup Modal -->
+<!-- Modal -->
 <div class="modal fade" id="detailsModal" tabindex="-1" aria-labelledby="detailsModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-lg">
+  <div class="modal-dialog modal-dialog-centered modal-lg modal-sm">
       <div class="modal-content card-style shadow-lg border-0 overflow-hidden">
-          <div class="d-flex">
-              <!-- Left Side - Image Section -->
-              <div class="modal-image d-none d-md-block">
-                  <img src="img/popup.jpg" alt="School" class="img-fluid h-100">
-              </div>
+          <div class="d-flex flex-column">
+              
               <!-- Right Side - Form Section -->
               <div class="modal-body flex-grow-1">
                   <div class="modal-header text-white rounded-top-4" style="background: linear-gradient(135deg, #2280cb, #1a508b);">
-                      <h5 class="modal-title text-white fw-bold" id="detailsModalLabel" style="font-family: 'Chunk Five', serif; font-size: 25px;">Please Submit Your Details</h5>
+                      <h5 class="modal-title text-white fw-bold" id="detailsModalLabel">Please Submit Your Details</h5>
                       <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
                   <form>
                       <div class="p-3">
-                          <div class="mb-3">
-                              <label for="fullName" class="form-label" style="font-family: 'league spartan', serif; font-size: 18px;">Full Name</label>
+                          <div class="mb-2">
+                              <label for="fullName" class="form-label">Full Name</label>
                               <div class="input-group">
                                   <span class="input-group-text bg-light"><i class="bi bi-person"></i></span>
                                   <input type="text" class="form-control" id="fullName" placeholder="Enter your full name">
                               </div>
                           </div>
-                          <div class="mb-3">
-                              <label for="whatsappNumber" class="form-label" style="font-family: 'league spartan', serif; font-size: 18px;">WhatsApp Number</label>
+                          <div class="mb-2">
+                              <label for="whatsappNumber" class="form-label">WhatsApp Number</label>
                               <div class="input-group">
                                   <span class="input-group-text bg-light"><i class="bi bi-whatsapp"></i></span>
                                   <input type="tel" class="form-control" id="whatsappNumber" placeholder="Enter your WhatsApp number">
                               </div>
                           </div>
-                          <div class="mb-3">
-                              <label for="email" class="form-label" style="font-family: 'league spartan', serif; font-size: 18px;">Email ID</label>
+                          <div class="mb-2">
+                              <label for="email" class="form-label">Email ID</label>
                               <div class="input-group">
                                   <span class="input-group-text bg-light"><i class="bi bi-envelope"></i></span>
                                   <input type="email" class="form-control" id="email" placeholder="Enter your email">
                               </div>
                           </div>
-                          <div class="mb-3">
-                              <label for="city" class="form-label" style="font-family: 'league spartan', serif; font-size: 18px;">City of Residence</label>
+                          <div class="mb-2">
+                              <label for="city" class="form-label">City of Residence</label>
                               <div class="input-group">
                                   <span class="input-group-text bg-light"><i class="bi bi-geo-alt"></i></span>
                                   <input type="text" class="form-control" id="city" placeholder="Enter your city">
                               </div>
                           </div>
-                          <div class="mb-3">
-                              <label for="connectTime" class="form-label" style="font-family: 'league spartan', serif; font-size: 18px;">Convenient Time to Connect</label>
+                          <div class="mb-2">
+                              <label for="connectTime" class="form-label">Convenient Time to Connect</label>
                               <div class="input-group">
                                   <span class="input-group-text bg-light"><i class="bi bi-clock"></i></span>
                                   <select class="form-control" id="connectTime">
@@ -1012,9 +1002,9 @@ h2.d-flex.align-items-center span {
                                   </select>
                               </div>
                           </div>
-                          <div class="d-flex justify-content-between mt-4">
-                              <button type="button" class="btn btn-outline-secondary px-4 py-2" data-bs-dismiss="modal">Close</button>
-                              <button type="submit" class="btn btn-primary px-4 py-2" id="submitForm">Submit</button>
+                          <div class="d-flex flex-column flex-md-row justify-content-between mt-3">
+                              <button type="button" class="btn btn-outline-secondary mb-2 mb-md-0 px-3 py-2" data-bs-dismiss="modal">Close</button>
+                              <button type="submit" class="btn btn-primary px-3 py-2" id="submitForm">Submit</button>
                           </div>
                       </div>
                   </form>
@@ -1023,6 +1013,35 @@ h2.d-flex.align-items-center span {
       </div>
   </div>
 </div>
+
+
+<style>
+  
+
+  @media (max-width: 768px) {
+  
+    .modal-content {
+        max-height: 90vh; /* Limits modal height */
+    }
+    .modal-body {
+        padding: 15px; /* Reduce padding inside the modal */
+    }
+    .modal-header {
+        padding: 10px 15px; /* Reduce header padding */
+    }
+    .form-label {
+        font-size: 14px; /* Reduce label size */
+    }
+    .form-control {
+        padding: 6px; /* Reduce input padding */
+    }
+}
+
+
+
+</style>
+
+
 
   <script src="js/jquery-3.3.1.min.js"></script>
   <script src="js/jquery-ui.js"></script>
