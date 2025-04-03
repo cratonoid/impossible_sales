@@ -35,28 +35,20 @@
       <div class="site-section-cover img-bg-section" style="background-image: url('images/hero_1.jpg'); position: relative;">
         
         <div class="container">
-          <div class="row roww align-items-start justify-content-start" style="padding-top: 100px;">
+          <div class="row roww align-items-start justify-content-start" style="padding-top: 150px;">
             
             <!-- Logo at the top left -->
-            <div style="position: absolute; top: 20px; left: 20px;">
-              <img src="images/logo.png" alt="Logo" style="max-width: 120px; height: auto;">
+            <div class="logo-position" style="position: absolute; top: 100px; left: 20px;">
+              <img src="images/logo.png" alt="Logo" style="max-width: 140px; height: auto;">
             </div>
     
-            <div class="col-md-8 text-left">
+            <div class="hero-content col-md-8 text-left" style="margin-top: 50px;">
               <p style="font-size: 25px; font-weight: 900; color: black; line-height: 1.4;">
                 Generate Business via Top-tier Events in Middle-East <br>
                 including GITEX, LEAP, AI Everything, and more.
               </p> 
               <p>
-                <a href="#" class="btn btn-gradient" 
-                   style="background: linear-gradient(90deg, #2280cb, #1a508b); 
-                          color: white; 
-                          padding: 14px 28px; 
-                          border-radius: 8px; 
-                          font-size: 18px; 
-                          font-weight: 900; 
-                          text-decoration: none; 
-                          display: inline-block;">
+                <a href="#" class="btn btn-gradient">
                   Let’s Connect
                 </a>
               </p>            
@@ -66,19 +58,58 @@
       </div>     
     </div>
     
-
-
     <style>
       .row-custom-spacing {
         column-gap: 100px; /* Increase horizontal spacing */
       }
-      @media (max-width: 768px) {
-  .site-section-cover {
-    background-image: url('images/hero_mob_1.jpg') !important;
+    
+      .btn-gradient {
+        background: linear-gradient(90deg, #2280cb, #1a508b);
+        color: white;
+        padding: 14px 28px;
+        border-radius: 8px;
+        font-size: 18px;
+        font-weight: 900;
+        text-decoration: none;
+        display: inline-block;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+    
+      /* Button Hover Effect */
+      .btn-gradient:hover {
+        transform: scale(1.1);
+        box-shadow: 0px 5px 15px rgba(34, 128, 203, 0.5);
+      }
+      @media (min-width: 769px) {  
+  .logo-position {
+    top: 100px !important; /* Move logo down only on desktop */
+  }
+  .hero-content{
+    margin-top: 50px !important;
   }
 }
-
+    
+      @media (max-width: 768px) {
+        .site-section-cover {
+          background-image: url('images/hero_mob_1.jpg') !important;
+        }
+        
+    
+        /* Smaller button for mobile */
+        .btn-gradient {
+          padding: 10px 20px;
+          font-size: 16px;
+        }
+        .logo-position {
+    top: 30px !important; /* Keep original position for mobile */
+  }
+  .hero-content{
+    margin-top: -10px !important;
+  }
+        
+      }
     </style>
+    
     
     <!-- CARDS -->
     
@@ -669,57 +700,142 @@ h2.d-flex.align-items-center span {
 
     <!--  -->
     <div class="site-section" id="blog-section">
-      <div class="container">        
-        <div class="row roww">
-          <div class="col-md-4">
-            <div style="position: relative; background-color: #f9f9f9; padding: 20px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); margin-bottom: 20px;">
-              <img src="images/star.png" alt="Star" style="position: absolute; top: 10px; right: 10px; width: 30px;" />
-              <div style="text-align: center;">
-                <img src="images/person_1.jpg" alt="Person 1" style="width: 80px; height: 80px; border-radius: 50%; margin-bottom: 10px;" />
-                <h3 style="font-size: 1.2em; margin-bottom: 5px;">Hellen Keller</h3>
-                <p style="color: #ffd700; margin-bottom: 10px;">⭐⭐⭐⭐⭐</p>
-                <p style="font-size: 0.9em; color: #555;">Impossible Sales has transformed our approach to the Middle East, enabling us to efficiently connect with high-value prospects without the logistical challenges.</p>
+      <div class="container">
+        <div class="row roww justify-content-center"> 
+          <div class="col-md-4 col-sm-8">
+            <div class="testimonial-card">
+              <img src="images/star.png" alt="Star" class="star-icon" />
+              <div class="testimonial-content">
+                <div class="testimonial-header">
+                  <img src="images/person_1.jpg" alt="Person 1" class="testimonial-img" />
+                  <h3 class="testimonial-name">Hellen Keller</h3>
+                </div>
+                <p class="stars">⭐⭐⭐⭐⭐</p>
+                <p class="testimonial-text">
+                  Impossible Sales has transformed our approach to the Middle East, enabling us to efficiently connect with high-value prospects without the logistical challenges.
+                </p>
               </div>
             </div>
           </div>
-          <div class="col-md-4">
-            <div style="position: relative; background-color: #f9f9f9; padding: 20px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); margin-bottom: 20px;">
-              <img src="images/star.png" alt="Star" style="position: absolute; top: 10px; right: 10px; width: 30px;" />
-              <div style="text-align: center;">
-                <img src="images/person_2.jpg" alt="Person 2" style="width: 80px; height: 80px; border-radius: 50%; margin-bottom: 10px;" />
-                <h3 style="font-size: 1.2em; margin-bottom: 5px;">William Smith</h3>
-                <p style="color: #ffd700; margin-bottom: 10px;">⭐⭐⭐⭐</p>
-                <p style="font-size: 0.9em; color: #555;">With impossible Sales, we've gained the flexibility to pursue valuable leads and opportunities, ensuring our growth in the competitive Middle Eastern market.</p>
+          <div class="col-md-4 col-sm-8">
+            <div class="testimonial-card">
+              <img src="images/star.png" alt="Star" class="star-icon" />
+              <div class="testimonial-content">
+                <div class="testimonial-header">
+                  <img src="images/person_2.jpg" alt="Person 2" class="testimonial-img" />
+                  <h3 class="testimonial-name">William Smith</h3>
+                </div>
+                <p class="stars">⭐⭐⭐⭐</p>
+                <p class="testimonial-text">
+                  With Impossible Sales, we've gained the flexibility to pursue valuable leads and opportunities, ensuring our growth in the competitive Middle Eastern market.
+                </p>
               </div>
             </div>
           </div>
-          <!-- <div class="col-md-4">
-            <div style="position: relative; background-color: #f9f9f9; padding: 20px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); margin-bottom: 20px;">
-              <img src="images/star.png" alt="Star" style="position: absolute; top: 10px; right: 10px; width: 30px;" />
-              <div style="text-align: center;">
-                <img src="images/person_3.jpg" alt="Person 3" style="width: 80px; height: 80px; border-radius: 50%; margin-bottom: 10px;" />
-                <h3 style="font-size: 1.2em; margin-bottom: 5px;">Carl Benson</h3>
-                <p style="color: #ffd700; margin-bottom: 10px;">⭐⭐⭐⭐⭐</p>
-                <p style="font-size: 0.9em; color: #555;">Impossible Sales has transformed my business.</p>
-              </div>
-            </div>
-          </div> -->
         </div>
+    
         <!-- Centered "Let's Connect" Button at the Bottom -->
-    <div class="text-center mt-4">
-      <button style="background: linear-gradient(90deg, #2280cb, #1a508b); 
-                     color: white; 
-                     border: none; 
-                     padding: 12px 24px; 
-                     font-size: 16px; 
-                     border-radius: 5px; 
-                     cursor: pointer;
-                     transition: 0.3s;">
-        Let's Connect
-      </button>
-    </div>
+        <div class="text-center mt-4">
+          <button class="connect-button">Let's Connect</button>
+        </div>
       </div>
     </div>
+    
+    <style>
+      /* Testimonial Card Styling */
+      .testimonial-card {
+        position: relative;
+        background-color: #f9f9f9;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        margin-bottom: 20px;
+        max-width: 350px;
+      }
+    
+      /* Star Icon */
+      .star-icon {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        width: 30px;
+      }
+    
+      /* Testimonial Header (Image + Name in one row) */
+      .testimonial-header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px; /* Adds space between image and name */
+        margin-bottom: 10px;
+      }
+    
+      /* Testimonial Image */
+      .testimonial-img {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+      }
+    
+      /* Testimonial Name */
+      .testimonial-name {
+        font-size: 1.2em;
+        margin: 0;
+      }
+    
+      /* Star Rating */
+      .stars {
+        color: #ffd700;
+        margin-bottom: 10px;
+      }
+    
+      /* Testimonial Text */
+      .testimonial-text {
+        font-size: 0.9em;
+        color: #555;
+      }
+    
+      /* Connect Button */
+      .connect-button {
+        background: linear-gradient(90deg, #2280cb, #1a508b);
+        color: white;
+        border: none;
+        padding: 12px 24px;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+    
+      /* Mobile Responsiveness */
+      @media (max-width: 768px) {
+        .testimonial-card {
+          padding: 15px;
+          max-width: 400px;
+        }
+    
+        .testimonial-img {
+          width: 50px;
+          height: 50px;
+        }
+    
+        .testimonial-name {
+          font-size: 1em;
+        }
+    
+        .testimonial-text {
+          font-size: 0.85em;
+        }
+    
+        .connect-button {
+          padding: 10px 20px;
+          font-size: 14px;
+        }
+      }
+    </style>
+    
+    
 
     <!--  -->
 
