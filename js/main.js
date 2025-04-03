@@ -150,11 +150,12 @@ jQuery(document).ready(function($) {
                 "Full Name": fullName,
                 "WhatsApp Number": whatsappNumber,
                 "Email ID": email,
-                "City of Residence": "nan",
+				"Business Name":bname,
+                "City of Residence": "invalid",
                 "Convenient Time to Connect": connectTime,
                 "Url" : url,
                 "Lp name" : "Impossible_Sales_1",
-				"Business Name":bname
+				
             };
 
             $.ajax({
