@@ -137,7 +137,11 @@ jQuery(document).ready(function($) {
             if (email === "" || !emailRegex.test(email)) {
                 swal("Invalid Email", "Please enter a valid email address.", "error");
                 return;
-            }            
+            }  
+			if (bname === "" ) {
+				swal("Invalid Business Name","Please enter your business name", "error");
+                return;
+			}          
             if (connectTime === "") {
                 swal("Invalid Time", "Please select a convenient time to connect.", "error");
                 return;
@@ -151,12 +155,13 @@ jQuery(document).ready(function($) {
                 "WhatsApp Number": whatsappNumber,
                 "Email ID": email,
 				"Business Name":bname,
-                "City of Residence": "invalid",
                 "Convenient Time to Connect": connectTime,
                 "Url" : url,
                 "Lp name" : "Impossible_Sales_1",
 				
             };
+
+			console.log(formData)
 
             $.ajax({
                 url: scriptURL,
