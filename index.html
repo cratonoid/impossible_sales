@@ -636,9 +636,9 @@ h2.d-flex.align-items-center span {
         </div>
     
         <!-- Benefits Section (2 per row roww, Centered Text) -->
-        <div class="row roww text-white text-center">
+        <div class="row roww text-white text-center" >
           <!-- Row 1 -->
-          <div class="col-md-6 mb-4">
+          <div class="col-md-5 mb-4">
             <h4 style="font-weight: 600;">Smart Lead Targeting</h4>
             <p>Our AI-driven system identifies high-value 
               prospects by analyzing market trends and 
@@ -647,7 +647,7 @@ h2.d-flex.align-items-center span {
               genuinely interested in your offerings.</p>
           </div>
     
-          <div class="col-md-6 mb-4" >
+          <div class="col-md-5 mb-4" >
             <h4 style="font-weight: 600;">Automated & Personalized Outreach</h4>
             <p> With AI-powered automation, we streamline 
               communication, sending personalized messages 
@@ -657,7 +657,7 @@ h2.d-flex.align-items-center span {
           </div>
     
           <!-- Row 2 -->
-          <div class="col-md-6 mb-4">
+          <div class="col-md-5 mb-4">
             <h4 style="font-weight: 600;">Real-Time Sales Insights</h4>
             <p> Our AI continuously monitors performance, 
               tracking interactions and optimizing strategies 
@@ -666,7 +666,7 @@ h2.d-flex.align-items-center span {
               generation and conversion.</p>
           </div>
     
-          <div class="col-md-6 mb-4">
+          <div class="col-md-5 mb-4">
             <h4 style="font-weight: 600;">Data-Driven Decision Making</h4>
             <p> By leveraging AI analytics, we provide actionable 
               insights that help you make informed business 
@@ -678,7 +678,11 @@ h2.d-flex.align-items-center span {
       </div>
     </div>
     
-
+    <style>
+      .col-md-5 {
+    margin: 0 auto 20px auto; /* Center and add space */
+}
+    </style>
 
 
     <!--  -->
@@ -973,30 +977,38 @@ h2.d-flex.align-items-center span {
                               <label for="fullName" class="form-label">Full Name</label>
                               <div class="input-group">
                                   <span class="input-group-text bg-light"><i class="bi bi-person"></i></span>
-                                  <input type="text" class="form-control" id="fullName" placeholder="Enter your full name">
+                                  <input type="text" class="form-control" id="fullName" placeholder="Full Name">
                               </div>
                           </div>
                           <div class="mb-2">
-                              <label for="whatsappNumber" class="form-label">WhatsApp Number</label>
-                              <div class="input-group">
-                                  <span class="input-group-text bg-light"><i class="bi bi-whatsapp"></i></span>
-                                  <input type="tel" class="form-control" id="whatsappNumber" placeholder="Enter your WhatsApp number">
-                              </div>
-                          </div>
+                            <label for="whatsappNumber" class="form-label">WhatsApp Number</label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-light"><i class="bi bi-whatsapp"></i></span>
+                                <select class="form-select w-auto" id="countryCode">
+                                    <option value="+91">+91 🇮🇳</option>
+                                    <option value="+1">+1 🇺🇸</option>
+                                    <option value="+44">+44 🇬🇧</option>
+                                    <!-- Add more country codes -->
+                                </select>
+                                <input type="tel" class="form-control" id="whatsappNumber" placeholder="WhatsApp Number">
+                            </div>
+                        </div>
+                        
                           <div class="mb-2">
                               <label for="email" class="form-label">Email ID</label>
                               <div class="input-group">
                                   <span class="input-group-text bg-light"><i class="bi bi-envelope"></i></span>
-                                  <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                                  <input type="email" class="form-control" id="email" placeholder="Email">
                               </div>
                           </div>
                           <div class="mb-2">
-                              <label for="city" class="form-label">City of Residence</label>
-                              <div class="input-group">
-                                  <span class="input-group-text bg-light"><i class="bi bi-geo-alt"></i></span>
-                                  <input type="text" class="form-control" id="city" placeholder="Enter your city">
-                              </div>
-                          </div>
+                            <label for="businessName" class="form-label">Business Name / Website</label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-light"><i class="bi bi-briefcase"></i></span>
+                                <input type="text" class="form-control" id="businessName" placeholder="Business Name / Website">
+                            </div>
+                        </div>
+                        
                           <div class="mb-2">
                               <label for="connectTime" class="form-label">Convenient Time to Connect</label>
                               <div class="input-group">
@@ -1007,9 +1019,10 @@ h2.d-flex.align-items-center span {
                               </div>
                           </div>
                           <div class="d-flex flex-column flex-md-row justify-content-between mt-3">
-                              <button type="button" class="btn btn-outline-secondary mb-2 mb-md-0 px-3 py-2" data-bs-dismiss="modal">Close</button>
-                              <button type="submit" class="btn btn-primary px-3 py-2" id="submitForm">Submit</button>
-                          </div>
+                            <button type="button" class="btn btn-outline-secondary mb-2 mb-md-0 px-2 py-1" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary px-2 py-1" id="submitForm">Submit</button>
+                        </div>
+                        
                       </div>
                   </form>
               </div>
@@ -1023,23 +1036,29 @@ h2.d-flex.align-items-center span {
   
 
   @media (max-width: 768px) {
-  
+    .modal-dialog {
+        max-width: 95%; /* Reduce modal width */
+    }
     .modal-content {
-        max-height: 90vh; /* Limits modal height */
+        max-height: 85vh; /* Limits modal height */
     }
     .modal-body {
-        padding: 15px; /* Reduce padding inside the modal */
+        padding: 10px; /* Reduce padding inside the modal */
     }
     .modal-header {
-        padding: 10px 15px; /* Reduce header padding */
+        padding: 8px 12px; /* Reduce header padding */
     }
     .form-label {
-        font-size: 14px; /* Reduce label size */
+        font-size: 13px; /* Slightly smaller labels */
     }
     .form-control {
-        padding: 6px; /* Reduce input padding */
+        padding: 5px; /* Reduce input padding */
+    }
+    .input-group-text {
+        padding: 5px 10px; /* Make icons smaller */
     }
 }
+
 
 
 
