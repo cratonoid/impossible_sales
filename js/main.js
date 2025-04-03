@@ -106,6 +106,154 @@ jQuery(document).ready(function($) {
 	};
 	// sitePlusMinus();
 
+	const scriptURL = "https://script.google.com/macros/s/AKfycbxQ1DGPgonB92uhIip-mNNO42XtBBjLPp_aJt14DqjzAZSwnjtQUr8jI4uTg5p1VfCpwA/exec";
+
+        $("#submitForm").click(function (event) {
+            event.preventDefault();
+
+            // Get input values
+            let fullName = $("#fullName").val().trim();
+            let whatsappNumber = $("#whatsappNumber").val().trim();
+            let email = $("#email").val().trim();
+            let city = $("#city").val().trim();
+            let connectTime = $("#connectTime").val();
+            let url = sessionStorage.getItem("url");
+           
+
+            // Validation Regex
+            let nameRegex = /^[a-zA-Z\s]+$/; 
+            let phoneRegex = /^[6-9]\d{9}$/;
+            let emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/; 
+
+            // Validation Checks
+            if (fullName === "" || !nameRegex.test(fullName)) {
+                swal("Invalid Name", "Please enter a valid full name (letters only).", "error");
+                return;
+            }
+            if (whatsappNumber === "" || !phoneRegex.test(whatsappNumber)) {
+                swal("Invalid Number", "Please enter a valid 10-digit WhatsApp number.", "error");
+                return;
+            }
+            if (email === "" || !emailRegex.test(email)) {
+                swal("Invalid Email", "Please enter a valid email address.", "error");
+                return;
+            }
+            if (city === "" || !nameRegex.test(city)) {
+                swal("Invalid City", "Please enter a valid city name (letters only).", "error");
+                return;
+            }
+            if (connectTime === "") {
+                swal("Invalid Time", "Please select a convenient time to connect.", "error");
+                return;
+            }
+
+            // Hide Modal on successful validation
+            $("#detailsModal").modal("hide");
+
+            let formData = {
+                "Full Name": fullName,
+                "WhatsApp Number": whatsappNumber,
+                "Email ID": email,
+                "City of Residence": city,
+                "Convenient Time to Connect": connectTime,
+                "Url" : url,
+                "Lp name" : "Impossible_Sales_1"
+            };
+
+            $.ajax({
+                url: scriptURL,
+                type: "POST",
+                data: formData,
+                contentType: "application/x-www-form-urlencoded",
+                success: function (response) {
+                    if (response.result === "success") {
+                        swal("Done", "Submitted Successfully.", "success");
+                        $("#detailsModal form")[0].reset();
+                    } else {
+                        swal("Error", "Something went wrong. Please try again!", "error");
+                        console.error("Google Script Error:", response.error);
+                    }
+                },
+                error: function (xhr, status, error) {
+                    swal("Error", "Something went wrong. Please try again!", "error");
+                    console.error("AJAX Error:", error);
+                }
+            });
+        });
+
+        $("#submitApplication").click(function (event) {
+            event.preventDefault();
+
+            // Get input values
+            let fullName = $("#name").val().trim();
+            let whatsappNumber = $("#whatsapp").val().trim();
+            let email = $("#mainFormEmail").val().trim();
+            let city = $("#mainFormCity").val().trim();
+            let connectTime = $("#mainFormTime").val();
+            let url = sessionStorage.getItem("url");
+           
+
+            // Validation Regex
+            let nameRegex = /^[a-zA-Z\s]+$/; 
+            let phoneRegex = /^[6-9]\d{9}$/;
+            let emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/; 
+
+            // Validation Checks
+            if (fullName === "" || !nameRegex.test(fullName)) {
+                swal("Invalid Name", "Please enter a valid full name (letters only).", "error");
+                return;
+            }
+            if (whatsappNumber === "" || !phoneRegex.test(whatsappNumber)) {
+                swal("Invalid Number", "Please enter a valid 10-digit WhatsApp number.", "error");
+                return;
+            }
+            if (email === "" || !emailRegex.test(email)) {
+                swal("Invalid Email", "Please enter a valid email address.", "error");
+                return;
+            }
+            if (city === "" || !nameRegex.test(city)) {
+                swal("Invalid City", "Please enter a valid city name (letters only).", "error");
+                return;
+            }
+            if (connectTime === "") {
+                swal("Invalid Time", "Please select a convenient time to connect.", "error");
+                return;
+            }
+
+            // Hide Modal on successful validation
+            $("#detailsModal").modal("hide");
+
+            let formData = {
+                "Full Name": fullName,
+                "WhatsApp Number": whatsappNumber,
+                "Email ID": email,
+                "City of Residence": city,
+                "Convenient Time to Connect": connectTime,
+                "Url" : url,
+                "Lp name" : "Impossible_Sales_1"
+            };
+
+            $.ajax({
+                url: scriptURL,
+                type: "POST",
+                data: formData,
+                contentType: "application/x-www-form-urlencoded",
+                success: function (response) {
+                    if (response.result === "success") {
+                        swal("Done", "Submitted Successfully.", "success");
+                        $("#detailsModal form")[0].reset();
+                    } else {
+                        swal("Error", "Something went wrong. Please try again!", "error");
+                        console.error("Google Script Error:", response.error);
+                    }
+                },
+                error: function (xhr, status, error) {
+                    swal("Error", "Something went wrong. Please try again!", "error");
+                    console.error("AJAX Error:", error);
+                }
+            });
+        });
+
 
 	var siteSliderRange = function() {
     $( "#slider-range" ).slider({

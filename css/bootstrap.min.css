@@ -1999,8 +1999,7 @@ fieldset:disabled a.btn {
 
 .btn-primary {
   color: #fff;
-  background-color: #7f4782;
-  border-color: #7f4782; }
+  background: linear-gradient(135deg, #2280cb, #1a508b);}
   .btn-primary:hover {
     color: #fff;
     background-color: #673969;
