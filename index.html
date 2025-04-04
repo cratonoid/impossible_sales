@@ -607,7 +607,7 @@ h2.d-flex.align-items-center span {
         <!-- Line 1 with image at the left -->
         <div style="display: flex; align-items: center; margin-top: 20px;">
           <img src="images/increase 1.png" alt="Icon 1" style="width: 30px; height: 30px; margin-right: 15px;">
-          <p style="flex-grow: 1; margin: 0; font-size: 14px; color: #333; font-weight: 600;"> Event-Based Sales Approach – Unlike generic sales agencies, we focus on networking and deal-making at 
+          <p style="flex-grow: 1; margin: 0; font-size: 16px; color: #333; font-weight: 600;"> Event-Based Sales Approach – Unlike generic sales agencies, we focus on networking and deal-making at 
             industry-leading events. We ensure that your brand is visible to the right audience, maximizing 
             opportunities for partnerships and client acquisition.</p>
         </div>
@@ -615,7 +615,7 @@ h2.d-flex.align-items-center span {
         <!-- Line 2 with image at the left -->
         <div style="display: flex; align-items: center; margin-top: 20px;">
           <img src="images/selective 1.png" alt="Icon 2" style="width: 30px; height: 30px; margin-right: 15px;">
-          <p style="flex-grow: 1; margin: 0; font-size: 14px; color: #333;  font-weight: 600;">AI-Backed Lead Generation – Our AI-powered system analyzes market trends, identifies high-value 
+          <p style="flex-grow: 1; margin: 0; font-size: 16px; color: #333;  font-weight: 600;">AI-Backed Lead Generation – Our AI-powered system analyzes market trends, identifies high-value 
             prospects, and personalizes outreach. This ensures that your sales efforts are targeted and efficient, 
             increasing conversion rates.</p>
         </div>
@@ -623,7 +623,7 @@ h2.d-flex.align-items-center span {
         <!-- Line 3 with image at the left -->
         <div style="display: flex; align-items: center; margin-top: 20px;">
           <img src="images/attendance 1.png" alt="Icon 3" style="width: 30px; height: 30px; margin-right: 15px;">
-          <p style="flex-grow: 1; margin: 0; font-size: 14px; color: #333;  font-weight: 600;">On-Ground Presence – We don’t just introduce you to potential clients—we are physically present at key 
+          <p style="flex-grow: 1; margin: 0; font-size: 16px; color: #333;  font-weight: 600;">On-Ground Presence – We don’t just introduce you to potential clients—we are physically present at key 
             events, representing your brand, building relationships, and closing deals. This hands-on approach gives 
             you a competitive advantage in the Middle East market.</p>
         </div>
@@ -631,7 +631,7 @@ h2.d-flex.align-items-center span {
         <!-- Line 4 with image at the left -->
         <div style="display: flex; align-items: center; margin-top: 20px;">
           <img src="images/goal 1.png" alt="Icon 3" style="width: 30px; height: 30px; margin-right: 15px;">
-          <p style="flex-grow: 1; margin: 0; font-size: 14px; color: #333;  font-weight: 600;"> Proven Success & Experience – With 50+ brands successfully expanded, 250+ high-quality leads converted, 
+          <p style="flex-grow: 1; margin: 0; font-size: 16px; color: #333;  font-weight: 600;"> Proven Success & Experience – With 50+ brands successfully expanded, 250+ high-quality leads converted, 
             and a presence in 10+ countries, our track record proves our ability to drive results. Our team has years of 
             experience in international sales and business development, ensuring a seamless market entry for your 
             business.</p>
@@ -1152,7 +1152,7 @@ h2.d-flex.align-items-center span {
   <script>
     let iti; // Declare globally
 
-document.addEventListener("DOMContentLoaded", function () {
+    document.addEventListener("DOMContentLoaded", function () {
     let input = document.querySelector("#whatsappNumber");
 
     if (input) {
@@ -1160,10 +1160,12 @@ document.addEventListener("DOMContentLoaded", function () {
             initialCountry: "ae",
             separateDialCode: true,
             preferredCountries: ["us", "in", "gb", "ae"],
-            utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js", // Required for number validation
+            utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+            dropdownContainer: document.body // Moves dropdown outside modal
         });
     }
 });
+
 
     // var input = document.querySelector("#whatsappNumber");
     // window.intlTelInput(input, {
