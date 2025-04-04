@@ -107,33 +107,40 @@ jQuery(document).ready(function($) {
 	// sitePlusMinus();
 
 	const scriptURL = "https://script.google.com/macros/s/AKfycbxQ1DGPgonB92uhIip-mNNO42XtBBjLPp_aJt14DqjzAZSwnjtQUr8jI4uTg5p1VfCpwA/exec";
-
+		
         $("#submitForm").click(function (event) {
             event.preventDefault();
 
             // Get input values
             let fullName = $("#fullName").val().trim();
-            let whatsappNumber = $("#whatsappNumber").val().trim();
             let email = $("#email").val().trim();
             let bname = $("#bname").val().trim();
             let connectTime = $("#connectTime").val();
             let url = sessionStorage.getItem("url");
+
+			let input = document.querySelector("#whatsappNumber");
+    		let whatsappNumber = iti ? iti.getNumber() : input.value.trim();
+
+			console.log(whatsappNumber,input,iti)
            
 
             // Validation Regex
             let nameRegex = /^[a-zA-Z\s]+$/; 
-            let phoneRegex = /^[6-9]\d{9}$/;
             let emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/; 
+			let phoneRegex = /^\+\d{1,3}\s?\d{6,14}$/;
+
 
             // Validation Checks
             if (fullName === "" || !nameRegex.test(fullName)) {
                 swal("Invalid Name", "Please enter a valid full name (letters only).", "error");
                 return;
             }
-            if (whatsappNumber === "" || !phoneRegex.test(whatsappNumber)) {
-                swal("Invalid Number", "Please enter a valid 10-digit WhatsApp number.", "error");
-                return;
-            }
+            if (whatsappNumber === "") {
+				console.log(whatsappNumber)
+				swal("Invalid Number", "Please enter a valid international phone number.", "error");
+				return;
+			}
+			
             if (email === "" || !emailRegex.test(email)) {
                 swal("Invalid Email", "Please enter a valid email address.", "error");
                 return;
@@ -169,14 +176,18 @@ jQuery(document).ready(function($) {
                 data: formData,
                 contentType: "application/x-www-form-urlencoded",
                 success: function (response) {
-                    if (response.result === "success") {
-                        swal("Done", "Submitted Successfully.", "success");
-                        $("#detailsModal form")[0].reset();
-                    } else {
-                        swal("Error", "Something went wrong. Please try again!", "error");
-                        console.error("Google Script Error:", response.error);
-                    }
-                },
+					if (response.result === "success") {
+						swal("Done", "Submitted Successfully.", "success")
+						.then(() => {
+							window.location.href = "thankyou.html"; // Redirect after user clicks OK
+						});
+						$("#detailsModal form")[0].reset();
+					} else {
+						swal("Error", "Something went wrong. Please try again!", "error");
+						console.error("Google Script Error:", response.error);
+					}
+				},
+				
                 error: function (xhr, status, error) {
                     swal("Error", "Something went wrong. Please try again!", "error");
                     console.error("AJAX Error:", error);

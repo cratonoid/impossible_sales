@@ -29,6 +29,32 @@
     <link rel="stylesheet" href="css/aos.css">
 
     <link rel="stylesheet" href="css/style.css">
+    <!-- facebook tag -->
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '504123302521047');
+      fbq('track', 'PageView');
+      </script>
+      <noscript><img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=504123302521047&ev=PageView&noscript=1"
+      /></noscript>
+
+        <!-- google tag -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16886535671"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+      
+        gtag('config', 'AW-16886535671');
+      </script>
     
   </head>
   <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
@@ -698,7 +724,7 @@ h2.d-flex.align-items-center span {
               <div class="testimonial-content">
                 <div class="testimonial-header">
                   <img src="images/person_1.jpg" alt="Person 1" class="testimonial-img" />
-                  <h3 class="testimonial-name">Hellen Keller</h3>
+                  <h3 class="testimonial-name">Michelle Smith</h3>
                 </div>
                 <p class="stars">⭐⭐⭐⭐⭐</p>
                 <p class="testimonial-text">
@@ -1124,12 +1150,27 @@ h2.d-flex.align-items-center span {
   <script src="js/main.js"></script>
 
   <script>
-    var input = document.querySelector("#whatsappNumber");
-    window.intlTelInput(input, {
-        initialCountry: "ae", // Set default country (optional)
-        separateDialCode: true, // Shows country code separately
-        preferredCountries: ["us", "in", "gb", "ae"], // Optional priority list
-    });
+    let iti; // Declare globally
+
+document.addEventListener("DOMContentLoaded", function () {
+    let input = document.querySelector("#whatsappNumber");
+
+    if (input) {
+        iti = window.intlTelInput(input, {
+            initialCountry: "ae",
+            separateDialCode: true,
+            preferredCountries: ["us", "in", "gb", "ae"],
+            utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js", // Required for number validation
+        });
+    }
+});
+
+    // var input = document.querySelector("#whatsappNumber");
+    // window.intlTelInput(input, {
+    //     initialCountry: "ae", // Set default country (optional)
+    //     separateDialCode: true, // Shows country code separately
+    //     preferredCountries: ["us", "in", "gb", "ae"], // Optional priority list
+    // });
 </script>
 
 
