@@ -177,16 +177,14 @@ jQuery(document).ready(function($) {
                 contentType: "application/x-www-form-urlencoded",
                 success: function (response) {
 					if (response.result === "success") {
-						swal("Done", "Submitted Successfully.", "success")
-						.then(() => {
-							window.location.href = "thankyou.html"; // Redirect after user clicks OK
-						});
+						window.location.href = "thankyou.html"; // Redirect immediately
 						$("#detailsModal form")[0].reset();
 					} else {
 						swal("Error", "Something went wrong. Please try again!", "error");
 						console.error("Google Script Error:", response.error);
 					}
-				},
+				}
+				,
 				
                 error: function (xhr, status, error) {
                     swal("Error", "Something went wrong. Please try again!", "error");
