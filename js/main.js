@@ -171,26 +171,23 @@ jQuery(document).ready(function($) {
 			console.log(formData)
 
             $.ajax({
-                url: scriptURL,
-                type: "POST",
-                data: formData,
-                contentType: "application/x-www-form-urlencoded",
-                success: function (response) {
-					if (response.result === "success") {
-						window.location.href = "thankyou.html"; // Redirect immediately
-						$("#detailsModal form")[0].reset();
-					} else {
-						swal("Error", "Something went wrong. Please try again!", "error");
-						console.error("Google Script Error:", response.error);
-					}
+				url: scriptURL,
+				type: "POST",
+				data: formData,
+				contentType: "application/x-www-form-urlencoded",
+				success: function (response) {
+					console.log("Form submitted successfully", response);
+				},
+				error: function (xhr, status, error) {
+					console.error("AJAX Error:", error);
 				}
-				,
-				
-                error: function (xhr, status, error) {
-                    swal("Error", "Something went wrong. Please try again!", "error");
-                    console.error("AJAX Error:", error);
-                }
-            });
+			});
+			
+			// Redirect without waiting for the server
+			setTimeout(() => {
+				window.location.href = "thankyou.html";
+			}, 500); // Redirect after 0.5 second
+			
         });
 
        
